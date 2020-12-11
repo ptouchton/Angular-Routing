@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { User } from './user';
 import { MessageService } from '../messages/message.service';
+import { NgxPermissionsService } from 'ngx-permissions';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,8 @@ export class AuthService {
     return !!this.currentUser;
   }
 
-  constructor(private messageService: MessageService) { }
+  constructor(private messageService: MessageService,
+    private permissionsService: NgxPermissionsService ) { }
 
   login(userName: string, password: string): void {
     if (!userName || !password) {

@@ -15,6 +15,7 @@ import { PageNotFoundComponent } from './page-not-found.component';
 /* Feature Modules */
 import { UserModule } from './user/user.module';
 import { MessageModule } from './messages/message.module';
+import { NgxPermissionsModule } from 'ngx-permissions';
 
 @NgModule({
   imports: [
@@ -24,7 +25,8 @@ import { MessageModule } from './messages/message.module';
     InMemoryWebApiModule.forRoot(ProductData, { delay: 1000 }),
     UserModule,
     MessageModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxPermissionsModule.forRoot()
   ],
   declarations: [
     AppComponent,
